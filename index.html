@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاهم</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">تفاهم</div>
+        <div class="hamburger">☰</div>
+        <div class="nav-links">
+            <a href="#home">خانه</a>
+            <a href="#about">درباره ما</a>
+            <a href="#features">امکانات</a>
+            <a href="#future">آینده</a>
+            <a href="#testimonials">نظرات</a>
+            <a href="#contact">تماس</a>
+            <a href="#dashboard" id="dashboard-link" style="display: none;">داشبورد</a>
+            <a href="#" id="logout-btn" style="display: none;">خروج</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <h1>تفاهم</h1>
+        <p>با تفاهم، درک بهتری از شریک تجاری خود داشته باشید</p>
+        <button class="btn" id="start-btn">شروع کنید</button>
+    </section>
+
+    <section class="section hidden" id="about">
+        <h2>درباره ما</h2>
+        <p>ما در تفاهم به شما کمک می‌کنیم تا با شرکای تجاری خود ارتباط بهتری برقرار کنید و همکاری‌های موفق‌تری داشته باشید.</p>
+    </section>
+
+    <section class="section hidden" id="features">
+        <h2>امکانات</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>استعلام شرکت</h3>
+                <p>اطلاعات دقیق و به‌روز از شرکت‌ها دریافت کنید.</p>
+            </div>
+            <div class="card">
+                <h3>مدیریت همکاری‌ها</h3>
+                <p>همکاری‌های خود را به‌راحتی مدیریت کنید.</p>
+            </div>
+            <div class="card">
+                <h3>پشتیبانی ۲۴/۷</h3>
+                <p>تیم پشتیبانی ما همیشه در کنار شماست.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section hidden" id="future">
+        <h2>آینده</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>هوش مصنوعی</h3>
+                <p>استفاده از هوش مصنوعی برای تحلیل بهتر داده‌ها.</p>
+            </div>
+            <div class="card">
+                <h3>اتصال به API</h3>
+                <p>اتصال به سیستم‌های دیگر برای تبادل اطلاعات.</p>
+            </div>
+            <div class="card">
+                <h3>گسترش جهانی</h3>
+                <p>ارائه خدمات در بازارهای بین‌المللی.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section hidden" id="testimonials">
+        <h2>نظرات کاربران</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>علی محمدی</h3>
+                <p>تفاهم به من کمک کرد تا شریک تجاری مناسب پیدا کنم.</p>
+            </div>
+            <div class="card">
+                <h3>سارا احمدی</h3>
+                <p>پشتیبانی عالی و امکانات بی‌نظیر!</p>
+            </div>
+            <div class="card">
+                <h3>رضا کریمی</h3>
+                <p>مدیریت همکاری‌ها با تفاهم خیلی ساده‌تر شده.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section hidden" id="contact">
+        <h2>تماس با ما</h2>
+        <form class="contact-form" id="contact-form">
+            <input type="text" id="name" placeholder="نام" required>
+            <input type="email" id="email" placeholder="ایمیل" required>
+            <textarea id="message" placeholder="پیام شما" rows="5" required></textarea>
+            <button type="submit" class="btn">ارسال</button>
+        </form>
+    </section>
+
+    <section class="section hidden" id="dashboard">
+        <h2>داشبورد</h2>
+        <div class="dashboard-content">
+            <div>
+                <h3>اطلاعات شرکت</h3>
+                <p>نام شرکت: <span id="dash-company-name">یافت نشد</span></p>
+                <p>کد شرکت: <span id="dash-company-code">نامشخص</span></p>
+                <p>زمینه فعالیت: <span id="dash-company-field">نامشخص</span></p>
+                <p>آدرس: <span id="dash-company-address">نامشخص</span></p>
+                <p>سطح شرکت: <span id="dash-company-tier">نامشخص</span></p>
+                <p>وضعیت اشتراک: <span id="dash-subscription-status">غیرفعال</span></p>
+                <p>سطح اشتراک: <span id="dash-subscription-tier">ندارد</span></p>
+                <p>تاریخ انقضای اشتراک: <span id="dash-subscription-expiry">نامشخص</span></p>
+                <button class="btn renew-subscription-btn">تمدید اشتراک</button>
+            </div>
+            <div>
+                <h3>اعلان‌ها</h3>
+                <ul id="notifications-list"></ul>
+            </div>
+            <div>
+                <h3>همکاری‌ها</h3>
+                <input type="text" id="collaboration-search" placeholder="جستجوی شریک">
+                <select id="collaboration-filter">
+                    <option value="all">همه</option>
+                    <option value="active">فعال</option>
+                    <option value="completed">تکمیل‌شده</option>
+                    <option value="canceled">لغو‌شده</option>
+                </select>
+                <table class="collaboration-table">
+                    <thead>
+                        <tr>
+                            <th>شریک</th>
+                            <th>تاریخ شروع</th>
+                            <th>وضعیت</th>
+                            <th>جزئیات</th>
+                            <th>اقدام</th>
+                        </tr>
+                    </thead>
+                    <tbody id="collaboration-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal" id="check-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>استعلام شرکت</h2>
+            <form class="check-form">
+                <input type="text" id="company-code" placeholder="کد ثبت شرکت (6 رقم)" required>
+                <span class="error" id="company-code-error"></span>
+                <button type="submit" class="btn">استعلام</button>
+            </form>
+            <div class="result">
+                <div class="company-card" style="display: none;">
+                    <p>نام شرکت: <span class="company-name"></span></p>
+                    <p>کد شرکت: <span class="company-code"></span></p>
+                    <p>تاریخ ثبت: <span class="company-date"></span></p>
+                    <p>آدرس: <span class="company-address"></span></p>
+                    <p>وضعیت: <span class="company-status"></span></p>
+                    <p>زمینه فعالیت: <span class="company-field"></span></p>
+                    <p>سطح شرکت: <span class="company-tier"></span></p>
+                    <p class="subscription-status"></p>
+                    <button class="btn subscribe-btn">خرید اشتراک</button>
+                </div>
+                <div class="subscription-card" style="display: none;">
+                    <p>سطح اشتراک: <span class="subscription-tier"></span></p>
+                    <p>قیمت: <span class="subscription-price"></span> تومان</p>
+                    <button class="btn pay-btn">پرداخت</button>
+                </div>
+                <div class="success-message"></div>
+                <div class="loading">در حال پردازش...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="payment-modal" style="display: none;">
+        <div class="payment-modal-content">
+            <span class="close-payment-btn">&times;</span>
+            <h2>درگاه پرداخت</h2>
+            <form class="payment-form">
+                <input type="text" id="card-number" placeholder="شماره کارت (16 رقم)" required>
+                <span class="error" id="card-number-error"></span>
+                <input type="text" id="expiry-date" placeholder="تاریخ انقضا (MM/YY)" required>
+                <span class="error" id="expiry-date-error"></span>
+                <input type="text" id="cvv" placeholder="CVV (3 یا 4 رقم)" required>
+                <span class="error" id="cvv-error"></span>
+                <button type="submit" class="btn">پرداخت</button>
+                <button type="button" class="btn back-btn">بازگشت</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="collaboration-details-modal" style="display: none;">
+        <div class="collaboration-details-content">
+            <span class="collaboration-close-btn">&times;</span>
+            <h2>جزئیات همکاری</h2>
+            <p>نام شریک: <span id="detail-partner-name"></span></p>
+            <p>تاریخ شروع: <span id="detail-start-date"></span></p>
+            <p>وضعیت: <span id="detail-status"></span></p>
+            <p>توضیحات: <span id="detail-description"></span></p>
+        </div>
+    </div>
+
+    <button id="back-to-top" style="display: none;">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

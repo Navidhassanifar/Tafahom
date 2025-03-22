@@ -1,0 +1,693 @@
+/* تنظیمات پایه */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #e0e0e0;
+    font-size: 16px;
+    line-height: 1.6;
+    direction: rtl;
+    text-align: right;
+}
+
+/* تنظیمات کلی */
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* نوار ناوبری */
+.navbar {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: #00FF99;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: #00B4D8;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00FF99;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    color: #00FF99;
+    cursor: pointer;
+}
+
+/* بخش Hero */
+.hero {
+    background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    color: #e0e0e0;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero h1, .hero p, .hero .btn {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: #00FF99;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px #00FF99;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #00B4D8;
+}
+
+.btn {
+    background: #00B4D8;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    background: #00FF99;
+    box-shadow: 0 0 20px #00B4D8;
+}
+
+/* بخش‌ها */
+.section {
+    padding: 4rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    margin: 2rem 0;
+    border-radius: 10px;
+    border: 1px solid #00B4D8;
+}
+
+.section h2 {
+    font-size: 2rem;
+    color: #00FF99;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.section p {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+}
+
+/* کارت‌ها */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.card {
+    background: rgba(0, 180, 216, 0.1);
+    border: 1px solid #00B4D8;
+    border-radius: 10px;
+    padding: 2rem;
+    width: 30%;
+    text-align: center;
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: #00FF99;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #e0e0e0;
+}
+
+/* فرم تماس */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.8rem;
+    border: 1px solid #00B4D8;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+/* مودال */
+.modal, .payment-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content, .payment-modal-content {
+    background: #1a1a2e;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid #00B4D8;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close-btn, .close-payment-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.5rem;
+    color: #00FF99;
+    cursor: pointer;
+}
+
+.check-form, .payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.check-form input, .payment-form input {
+    padding: 0.8rem;
+    border: 1px solid #00B4D8;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+.error {
+    color: #ff4d4d;
+    font-size: 0.9rem;
+    display: none;
+}
+
+.result {
+    display: none;
+    margin-top: 1rem;
+}
+
+.company-card, .subscription-card {
+    background: rgba(0, 180, 216, 0.1);
+    border: 1px solid #00B4D8;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.company-card p, .subscription-card p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.subscription-status {
+    color: #00FF99;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.success-message {
+    display: none;
+    margin-top: 1rem;
+    color: #00FF99;
+    text-align: center;
+}
+
+.loading {
+    display: none;
+    text-align: center;
+    margin-top: 1rem;
+    color: #00B4D8;
+}
+
+.back-btn {
+    background: #ff4d4d;
+    margin-top: 1rem;
+}
+
+.back-btn:hover {
+    background: #ff6666;
+}
+
+/* داشبورد */
+#dashboard {
+    display: none;
+}
+
+.dashboard-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.dashboard-content > div {
+    background: rgba(0, 180, 216, 0.1);
+    border: 1px solid #00B4D8;
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 30%;
+}
+
+#welcome-message {
+    font-size: 1.5rem;
+    color: #00FF99;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#notifications-list {
+    list-style: none;
+    padding: 0;
+}
+
+#notifications-list li {
+    background: rgba(0, 255, 153, 0.1);
+    border: 1px solid #00FF99;
+    border-radius: 5px;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#notifications-list li.visible {
+    opacity: 1;
+}
+
+.collaboration-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.collaboration-table.visible {
+    opacity: 1;
+}
+
+.collaboration-table th, .collaboration-table td {
+    border: 1px solid #00B4D8;
+    padding: 0.8rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.collaboration-table th {
+    background: rgba(0, 180, 216, 0.2);
+    color: #00FF99;
+}
+
+.status.active {
+    color: #00FF99;
+}
+
+.status.completed {
+    color: #00B4D8;
+}
+
+.status.canceled {
+    color: #ff4d4d;
+}
+
+#collaboration-search, #collaboration-filter {
+    padding: 0.5rem;
+    border: 1px solid #00B4D8;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+    margin: 0.5rem;
+}
+
+/* مودال جزئیات همکاری */
+.collaboration-details-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.collaboration-details-content {
+    background: #1a1a2e;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid #00B4D8;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.collaboration-close-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.5rem;
+    color: #00FF99;
+    cursor: pointer;
+}
+
+/* دکمه بازگشت به بالا */
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #00B4D8;
+    color: #fff;
+    padding: 0.8rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+}
+
+#back-to-top:hover {
+    background: #00FF99;
+}
+
+/* کلاس مخفی */
+.hidden {
+    display: none !important;
+}
+
+/* استایل‌های ریسپانسیو */
+
+/* موبایل (زیر 600px) */
+@media (max-width: 600px) {
+    /* نوار ناوبری */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.5rem 1rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 1rem;
+        margin-top: 2.5rem;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 1rem 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+        padding: 0.5rem 0;
+    }
+
+    /* بخش Hero */
+    .hero {
+        padding: 1rem;
+        height: 80vh;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero .btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    /* بخش‌ها */
+    .section {
+        padding: 2rem 1rem;
+        margin: 1rem 0;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .section p {
+        font-size: 1rem;
+    }
+
+    /* کارت‌ها */
+    .card {
+        width: 100%;
+        margin: 0.5rem 0;
+        padding: 1.5rem;
+    }
+
+    .card h3 {
+        font-size: 1.2rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+
+    /* فرم‌ها */
+    .contact-form, .check-form, .payment-form {
+        width: 100%;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .check-form input,
+    .payment-form input {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.6rem;
+    }
+
+    /* مودال */
+    .modal-content, .payment-modal-content, .collaboration-details-content {
+        padding: 1.5rem;
+        width: 95%;
+        max-width: 400px;
+    }
+
+    /* داشبورد */
+    #dashboard {
+        padding: 1rem;
+    }
+
+    .dashboard-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .dashboard-content > div {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    #welcome-message {
+        font-size: 1.2rem;
+    }
+
+    #notifications-list li {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+
+    /* جدول همکاری‌ها */
+    .collaboration-table {
+        font-size: 0.8rem;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .collaboration-table th, .collaboration-table td {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .collaboration-table .btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    #collaboration-search, #collaboration-filter {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    /* دکمه تمدید اشتراک */
+    .renew-subscription-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* تبلت (600px تا 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    /* نوار ناوبری */
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+
+    /* بخش Hero */
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    /* بخش‌ها */
+    .section {
+        padding: 3rem 1.5rem;
+    }
+
+    .section h2 {
+        font-size: 1.8rem;
+    }
+
+    /* کارت‌ها */
+    .card {
+        width: 48%;
+        margin: 1%;
+    }
+
+    /* داشبورد */
+    .dashboard-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .dashboard-content > div {
+        width: 48%;
+    }
+
+    .collaboration-table th, .collaboration-table td {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+}
+
+/* دسکتاپ (بالای 1024px) */
+@media (min-width: 1025px) {
+    .hamburger {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+    }
+
+    .card {
+        width: 30%;
+        margin: 1.5%;
+    }
+
+    .dashboard-content {
+        flex-direction: row;
+    }
+
+    .dashboard-content > div {
+        width: 30%;
+    }
+}
